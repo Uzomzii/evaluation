@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h3>This app wants to see if you're qualified to stay in St. Tropez</h3>
+    <form method="post">
+      {% csrf_token %}
+      <p>
+  			<label for="name_text_input">Your Name</label><br>
+  			<input id="name_text_input" type="text" name="name_input" value="">
+  		</p>
+      <p>
+  			<label for="id_text_input">Your City</label><br>
+  			<input id="id_text_input" type="text" name="text_input" value="">
+  		</p>
+      <p>
+  			<label for="currency_text_input">Your currency</label><br>
+  			<input id="currency_text_input" type="text" name="currency_input" value="">
+  		</p>
+      <p>
+  			<label for="convert_text_input">Amount you want to convert</label><br>
+  			<input id="convert_text_input" type="text" name="converter_input" value="">
+  		</p>
+  		<p>
+  			<input type="submit" name="submit_input" value="Submit Input">
+  			</p>
+    </form>
+    <p>
+      The current weather in {{ curr.text_input }} is {{ city_weather.temperature }} <sup>o</sup>C
+    </p>
+      {% if reports.conversion > 62532 %}
+        <p>You are worthy of St. Tropez</p>
+      {% else %}
+        <p>
+          You are poor
+        </p>
+      {% endif %}
+  </body>
+</html>
